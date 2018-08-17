@@ -1,0 +1,32 @@
+
+ <ion-content padding *ngIf="mostrarlogin">
+ <div>
+  <h3 class="gray">Login</h3>
+ </div>
+<form #loginform="ngForm" (ngSubmit)="loginfuncion()">
+  <ion-list>
+
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="text" #email="ngModel" name="email" [(ngModel)]="user.email" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" #password="ngModel" name="password" [(ngModel)]="user.password"  ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label >¿Mantenerse logueado?</ion-label>
+    <ion-checkbox name="guardar"    [(ngModel)]="guardarenlocal" color="dark" checked="true"></ion-checkbox>
+  </ion-item>
+
+  </ion-list>
+
+    <ion-label fixed></ion-label>
+     <ion-row center>
+    <button ion-button full round type="submit">entrar</button>
+  </ion-row>
+</form>
+
+</ion-content>
