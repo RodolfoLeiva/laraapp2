@@ -1,5 +1,13 @@
 
- <ion-content padding *ngIf="mostrarlogin">
+ <ion-content padding *ngIf="mostrarlogin" [@animacion]=estatustagle>
+   <ion-grid>
+     <ion-row>
+     <ion-col ><ion-img  src="../../assets/imgs/logolg.png"></ion-img></ion-col>
+       <ion-col col-6><ion-img width="100" height="100" src="../../assets/imgs/colgador.jpg"></ion-img></ion-col>
+   </ion-row>
+   </ion-grid>
+   <ion-card >
+     <ion-card-content>
  <div>
   <h3 class="gray">Login</h3>
  </div>
@@ -28,5 +36,6 @@
     <button ion-button full round type="submit">entrar</button>
   </ion-row>
 </form>
-
+  </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -20,7 +20,8 @@ export class loginservice {
   constructor (private http: HttpClient,private storage: Storage){
     this.url = GLOBAL.url
     this.user = new User ('','','','');
-    this.usuarioconectado =  new Userconectado (false,this.user);
+    this.user.nombre = "";
+    this.usuarioconectado =  new Userconectado (false, User);
   }
   signup  (user_to_login):Observable<any>{
     return  this.http.post(this.url+'/login',
