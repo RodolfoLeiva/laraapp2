@@ -11,17 +11,9 @@ import { trigger,style,transition,animate,keyframes,query,stagger,state } from '
   animations: [
     trigger('animacion', [
       state('inactive',
-      style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
-         style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
-         style({opacity: 1, transform: 'translateY(0)',     offset: 1.0})
-
-            ),
+      style({opacity: 0, transform: 'translateY(-75%)'})),
       state('active',
-            style({opacity: 1, transform: 'translateY(0)', offset: 0}),
-            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
-            style({opacity: 0, transform: 'translateY(-75%)',     offset: 1.0})
-
-          ),
+            style({opacity: 1, transform: 'translateY(0%)'})),
       transition('inactive => active', animate('300ms')),
       transition('active => inactive', animate('300ms'))
     ])

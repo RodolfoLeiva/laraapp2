@@ -1,5 +1,6 @@
 export class Userconectado
 {
+  user: any;
 	constructor(
     conectado: boolean,
     user: {

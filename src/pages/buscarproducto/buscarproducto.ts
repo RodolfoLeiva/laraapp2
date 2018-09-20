@@ -42,16 +42,26 @@ public categoria : opcionProducto[] ;
 public color : opcionProducto[] ;
 public tamano : opcionProducto[] ;
 public talla : opcionProducto[] ;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public _productoservice:productoservice) {
-    this.producto = new Producto;
     this.opcionesfuncion();
+    this.producto = new Producto;
+    this.producto.codigo = "12345678912345";
+    this.producto.categoria = "01 Vestidos";
+    this.producto.color = "01 Blanco";
+    this.producto.tamano = "1 Corto";
+    this.producto.observaciones = "";
+    this.producto.creadoel = Date.now();
+    this.producto.creadopor = "rodolfoleiva@gmail.com";
+    this.producto.editadoel = Date.now();
+    this.producto.estatus = true;
+    this.producto.talla = "45";
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BuscarproductoPage');
+    console.log(this.producto.codigo);
   }
   opcionesfuncion(){
-
         this._productoservice.traeopcion('color').subscribe((data:any) => {
              this.color = data.opcionproducto
            console.log(this.color)

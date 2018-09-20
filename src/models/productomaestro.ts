@@ -1,5 +1,7 @@
 export class Productomaestro
 {
+  titulo: String;
+  producto: import("/Users/rodolfoleiva/Documents/prg/laraapp2/src/models/producto").Producto;
 
 	constructor(
     accion : String,

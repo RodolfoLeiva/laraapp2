@@ -25693,3 +25693,7 @@ login ion-content div {
   -ms-flex-align: center;
   align-items: center;
 }
+
+page-buscarproducto .masters {
+  background-color: #f4f5f8;
+}

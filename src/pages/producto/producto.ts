@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, FabContainer } from 'ionic-angular';
 import { Producto } from '../../models/producto';
 import { opcionProducto } from '../../models/opcionproducto';
 import { productoservice } from '../../services/producto';
@@ -16,16 +16,9 @@ import {  BuscarproductoPage } from '../buscarproducto/buscarproducto';
   animations: [
     trigger('animacion', [
       state('inactive',
-      style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
-         style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
-         style({opacity: 1, transform: 'translateY(0)',     offset: 1.0})
-
-            ),
+      style({opacity: 0, transform: 'translateY(-75%)', offset: 0})),
       state('active',
-            style({opacity: 1, transform: 'translateY(0)', offset: 0}),
-            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
-            style({opacity: 0, transform: 'translateY(-75%)',     offset: 1.0})
-
+            style({opacity: 1, transform: 'translateY(0%)',     offset: 1.0})
           ),
       transition('inactive => active', animate('100ms')),
       transition('active => inactive', animate('100ms'))
@@ -42,8 +35,12 @@ export class ProductoPage {
   public producto : Producto ;
   public estatustagle : String;
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertctrl:AlertController ,public _productoservice:productoservice,public _loginservice:loginservice) {
-    this.estatustagle = 'active';
-    this.producto = new Producto;
+    this.estatustagle = 'inactive'
+    setTimeout(() => {
+      this.estatustagle = 'active'
+    },
+      300);
+    this.producto = new Producto()
     this.titulo = this._productoservice.productomaestro.titulo;
     this.producto = this._productoservice.productomaestro.producto;
     console.log (this.estatustagle)
@@ -92,7 +89,6 @@ export class ProductoPage {
 },
 200);
 
-  console.log(this.estatustagle);
 
  }
  grabarfuncion(){
